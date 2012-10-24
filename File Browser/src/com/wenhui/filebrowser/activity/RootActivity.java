@@ -11,8 +11,6 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -38,8 +36,12 @@ import com.wenhui.filebrowser.generic.IconPicker;
 import com.wenhui.filebrowser.model.ListItemsContainer;
 
 /**
- * Subclass this class must add <b> <intent-filter> <action android:name="android.intent.action.MEDIA_MOUNTED" /> <data
- * android:scheme="file" /> </intent-filter> </b> to its <activity> tag.
+ * Subclass this class must add 
+ * <b> 
+ * <intent-filter> &lt;action android:name="android.intent.action.MEDIA_MOUNTED" /> &lt;data
+ * android:scheme="file" /> &lt;/intent-filter>
+ *  </b> 
+ *  to its <activity> tag.
  */
 public abstract class RootActivity extends Activity {
 
