@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="8dp" >
+
+    <ProgressBar
+        android:id="@+id/progressBar_indeterminate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp" >
+    </ProgressBar>
+
+    <TextView
+        android:id="@+id/textView_dir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/progressBar_indeterminate"
+        android:layout_toRightOf="@+id/progressBar_indeterminate"
+        android:maxLines="2"
+        android:text="......"
+        android:textColor="@color/general_text_color"
+        android:textSize="15dp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/progressBar_indeterminate"
+        android:layout_toRightOf="@+id/progressBar_indeterminate"
+        android:text="@string/result"
+        android:textColor="@color/general_text_color"
+        android:textSize="15dp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/textView_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignTop="@+id/textView1"
+        android:layout_toRightOf="@+id/textView1"
+        android:paddingLeft="5dp"
+        android:text="0"
+        android:textColor="@color/general_text_color"
+        android:textSize="15dp" >
+    </TextView>
+
+</RelativeLayout>

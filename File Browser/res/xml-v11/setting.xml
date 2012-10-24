@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference android:key="prefs_show_hidden" android:title="@string/show_hidden" android:defaultValue="false"></CheckBoxPreference>
+    <CheckBoxPreference android:title="@string/save_prev_state" android:key="prefs_save_prev_state" android:summary="@string/save_prev_state_summary" android:defaultValue="true"></CheckBoxPreference><Preference android:title="@string/prefs_removable_title" android:summary="@string/prefs_removable_summary" android:key="prefs_removable_path"/><Preference android:title="@string/send_feed_back" android:key="prefs_feed_back"></Preference>
+    
+    
+</PreferenceScreen>

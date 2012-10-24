@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <TextView
+        android:id="@+id/textView_path"
+        style="@style/path_text_view_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:textColor="@color/text_path" >
+    </TextView>
+    
+    <ImageView
+        android:id="@+id/empty_folder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:drawSelectorOnTop="true"
+        android:listSelector="@drawable/list_selector_background"
+        android:scaleType="center"
+        android:src="@drawable/ic_menu_archive"
+        android:visibility="gone" >
+    </ImageView>
+
+    <ListView
+        android:id="@+id/myList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:paddingBottom="5dp" >
+    </ListView>
+
+    <GridView
+        android:id="@+id/myGrid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_weight="1"
+        android:drawSelectorOnTop="true"
+        android:horizontalSpacing="2dp"
+        android:listSelector="@drawable/list_selector_background"
+        android:numColumns="4"
+        android:verticalSpacing="2dp" >
+    </GridView>
+
+</merge>

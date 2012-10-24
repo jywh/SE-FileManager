@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:orientation="vertical"
+	android:layout_height="fill_parent">
+	<LinearLayout android:id="@+id/linearLayout_delete_bar"
+		android:layout_width="fill_parent" android:layout_gravity="top"
+		android:layout_weight="0" android:orientation="horizontal"
+		android:paddingTop="5dp" android:clickable="true" android:background="@color/offwhite" android:layout_height="60dp">
+		<ImageButton android:src="@drawable/ic_share"
+			android:layout_gravity="left|center" android:layout_marginLeft="20dp"
+			android:id="@+id/imageButton_share" android:layout_height="49dp" android:layout_width="53dp"></ImageButton>
+		<TextView android:layout_width="wrap_content"
+			android:layout_height="fill_parent" android:gravity="left|center"
+			android:id="@+id/textView_share" android:textSize="20dp"
+			android:textColor="#000" android:text="@string/share"
+			android:layout_marginLeft="5dp"></TextView>
+		<TextView android:id="@+id/textView_all" android:layout_weight="1"
+			android:layout_height="fill_parent" android:layout_width="fill_parent"
+			android:text="@string/select_all" android:layout_gravity="center"
+			android:gravity="right|center" android:paddingRight="3dp"
+			android:textSize="20dp" android:textColor="#000"></TextView>
+		<CheckBox android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/checkBox_share_all"
+			android:layout_weight="0"
+			android:layout_marginRight="7dp" android:layout_gravity="right|center"></CheckBox>
+	</LinearLayout>
+	<ListView android:layout_width="fill_parent"
+		android:layout_weight="1" android:id="@+id/android:list" android:layout_height="fill_parent"></ListView>
+</LinearLayout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/buttons_pane"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:background="@color/offwhite"
+		android:layout_gravity="center"
+		android:gravity="center" 
+		android:padding="@dimen/multi_select_button_pane_padding"
+		android:paddingTop="@dimen/multi_select_button_pane_padding_top"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/button_back"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="@dimen/multi_select_button_margin_left"
+            android:layout_marginRight="@dimen/multi_select_button_margin_right"
+            android:drawableLeft="@drawable/ic_menu_revert"
+            android:text="@string/back" 
+            android:layout_weight="1"
+            android:textSize="13sp">
+        </Button>
+
+        <Button
+            android:id="@+id/button_home"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="@dimen/multi_select_button_margin_left"
+            android:layout_marginRight="@dimen/multi_select_button_margin_right"
+            android:drawableLeft="@drawable/ic_menu_home"
+            android:text="@string/home"
+            android:layout_weight="1"
+            android:textSize="13sp" >
+        </Button>
+
+        <Button
+            android:id="@+id/button_search"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="@dimen/multi_select_button_margin_left"
+            android:layout_marginRight="@dimen/multi_select_button_margin_right"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_menu_search_holo_dark"
+            android:text="@string/search"
+            android:textSize="13sp" >
+        </Button>
+    </LinearLayout>
+
+    <include layout="@layout/file_content_view" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout_paste"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|fill"
+        android:background="@drawable/popup_full_bright"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/button_paste"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_menu_paste"
+            android:text="@string/paste_here"
+            android:textSize="@dimen/button_text_with_drawable" >
+        </Button>
+
+        <Button
+            android:id="@+id/button_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_menu_close_clear_cancel"
+            android:text="@string/cancel"
+            android:textSize="@dimen/button_text_with_drawable" >
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

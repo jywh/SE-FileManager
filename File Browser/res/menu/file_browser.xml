@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/add_folder"
+        android:icon="@drawable/ic_menu_add"
+        android:title="@string/add_folder">
+    </item>
+    <item
+        android:id="@+id/multi_selection"
+        android:icon="@drawable/ic_menu_multiselect"
+        android:title="@string/multi_selection">
+    </item>
+    <item
+        android:id="@+id/view_by"
+        android:icon="@drawable/ic_menu_view"
+        android:title="@string/view_by">
+    </item>
+    <item
+        android:id="@+id/list_by"
+        android:icon="@drawable/ic_menu_list_by"
+        android:title="@string/list_by">
+    </item>
+    <item
+        android:id="@+id/exit"
+        android:icon="@drawable/ic_menu_close_clear_cancel"
+        android:title="@string/exit">
+    </item>
+    <item
+        android:id="@+id/setting"
+        android:icon="@drawable/ic_menu_preferences"
+        android:title="@string/setting">
+    </item>
+
+</menu>

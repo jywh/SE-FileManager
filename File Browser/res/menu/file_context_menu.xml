@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/file_copy" android:title="@string/copy"></item>
+    <item android:id="@+id/file_move" android:title="@string/cut"></item>
+    <item android:id="@+id/file_delete" android:title="@string/delete"></item>
+    <item android:id="@+id/file_rename" android:title="@string/rename"></item>
+    <item android:id="@+id/file_share" android:title="@string/share"></item><item android:title="@string/zip" android:id="@+id/file_zip"></item><item android:id="@+id/file_detail" android:title="@string/detail"></item>
+    
+    
+</menu>

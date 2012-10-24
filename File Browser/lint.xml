@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="HandlerLeak" severity="ignore" />
+    <issue id="NewApi" severity="ignore">
+        <ignore path="src/com/wenhui/filebrowser/activity/FileBrowserActivity.java" />
+    </issue>
+    <issue id="UseValueOf" severity="ignore" />
+</lint>

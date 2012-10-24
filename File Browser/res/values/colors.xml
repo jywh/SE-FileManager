@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="whitesmoke">#E5E5E5</color>
+    <color name="offwhite">#DDDDDD</color>
+    <color name="black">#000000</color>
+    <color name="gray">#9B9B9B</color>
+    <color name="red">#f0452b</color>
+    <color name="dark_gray">#784F4F4F</color>
+    <color name="green">#00fa9a</color>
+    <color name="general_text_color">#000</color>
+    <color name="text_path">#252424</color>
+    <color name="search_dialog_text_color">#fff</color>
+    
+</resources>

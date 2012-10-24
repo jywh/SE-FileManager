@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <TextView
+        android:id="@+id/textView_file_exist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/search_dialog_text_color"
+        android:textSize="17sp" >
+    </TextView>
+
+    <CheckBox
+        android:id="@+id/checkBox_do_following"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/do_the_following"
+        android:textColor="@color/search_dialog_text_color" >
+    </CheckBox>
+
+</LinearLayout>

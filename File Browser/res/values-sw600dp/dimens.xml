@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Grid view -->
+    <dimen name="grid_image_frame_size">64dp</dimen>
+    <dimen name="grid_image_play_overlay_size">45dp</dimen>
+    <dimen name="grid_text_size">14sp</dimen>
+
+        <!-- Multi Selection -->
+    <dimen name="multi_select_button_pane_padding">10dp</dimen>
+    <dimen name="multi_select_button_pane_padding_top">10dp</dimen>
+    <dimen name="multi_select_button_margin_left">10dp</dimen>
+    <dimen name="multi_select_button_margin_right">10dp</dimen>
+    
+</resources>

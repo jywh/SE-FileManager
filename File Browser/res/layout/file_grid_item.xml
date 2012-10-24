@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/border"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="1dp"
+    android:paddingRight="1dp" >
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginTop="10dp" >
+
+        <ImageView
+            android:id="@+id/imageView_file"
+            android:layout_width="@dimen/grid_image_frame_size"
+            android:layout_height="@dimen/grid_image_frame_size"
+            android:layout_gravity="center"
+            android:src="@drawable/folder" />
+
+        <ImageView
+            android:id="@+id/imageView_play_overlay"
+            android:layout_width="@dimen/grid_image_play_overlay_size"
+            android:layout_height="@dimen/grid_image_play_overlay_size"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_play_overlay" >
+        </ImageView>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textView_file"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="2dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center"
+        android:lines="2"
+        android:textColor="@color/general_text_color"
+        android:textSize="@dimen/grid_text_size" >
+    </TextView>
+    
+    <TextView
+        android:id="@+id/textView_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="8dp"
+        android:gravity="right"
+        android:textSize="14dp"
+        android:visibility="gone" >
+    </TextView>
+</LinearLayout>

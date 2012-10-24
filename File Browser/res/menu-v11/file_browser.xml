@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_menu_home"
+        android:showAsAction="always">
+    </item>
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/ic_menu_search_holo_dark"
+        android:showAsAction="always"
+        android:title="@string/search">
+    </item>
+    <item
+        android:id="@+id/add_folder"
+        android:icon="@drawable/ic_menu_add"
+        android:showAsAction="never"
+        android:title="@string/add_folder">
+    </item>
+    <item
+        android:id="@+id/multi_selection"
+        android:icon="@drawable/ic_menu_multiselect"
+        android:showAsAction="never"
+        android:title="@string/multi_selection">
+    </item>
+    <item
+        android:id="@+id/view_by"
+        android:icon="@drawable/ic_menu_view"
+        android:showAsAction="never"
+        android:title="@string/view_by">
+    </item>
+    <item
+        android:id="@+id/list_by"
+        android:icon="@drawable/ic_menu_list_by"
+        android:showAsAction="never"
+        android:title="@string/list_by">
+    </item>
+    <item
+        android:id="@+id/removable_drive"
+        android:showAsAction="never"
+        android:visible="false"
+        android:title="@string/removable_dir">
+    </item>
+    <item
+        android:id="@+id/exit"
+        android:icon="@drawable/ic_menu_close_clear_cancel"
+        android:showAsAction="never"
+        android:title="@string/exit">
+    </item>
+    <item
+        android:id="@+id/setting"
+        android:icon="@drawable/ic_menu_preferences"
+        android:showAsAction="never"
+        android:title="@string/setting">
+    </item>
+
+</menu>
