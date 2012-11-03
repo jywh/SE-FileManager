@@ -4,10 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.ProgressDialog;
+import android.app.*;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -58,7 +55,6 @@ public abstract class RootActivity extends Activity {
 
 	protected SimpleFileAdapter mAdapter;
 	protected ArrayList< ListItemsContainer > mListItems;
-	protected Spinner mDirectoryNavigation;
 	protected ArrayList< String > mDirStack;
 	protected ArrayAdapter< String > mDirAdapter;
 
@@ -313,7 +309,7 @@ public abstract class RootActivity extends Activity {
 			if ( !App.instance().isMultiSelectMode() ) {
 				mDirAdapter.notifyDataSetChanged();
 			}
-			mDirectoryNavigation.setSelection( mDirAdapter.getCount() - 1, false );
+			getActionBar().setSelectedNavigationItem( mDirAdapter.getCount() - 1 );
 		}
 
 	}

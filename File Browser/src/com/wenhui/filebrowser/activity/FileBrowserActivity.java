@@ -102,12 +102,11 @@ public class FileBrowserActivity extends RootActivity {
 			// Show action bar
 			ActionBar actionBar = getActionBar();
 			actionBar.setDisplayHomeAsUpEnabled( true );
+			actionBar.setNavigationMode( ActionBar.NAVIGATION_MODE_LIST );
 			findViewById( R.id.buttons_pane ).setVisibility( View.GONE );
-			mDirectoryNavigation = ( Spinner ) actionBar.getCustomView();
 			mDirAdapter = new ArrayAdapter< String >( this, android.R.layout.simple_spinner_item, mDirStack );
 			mDirAdapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
-			mDirectoryNavigation.setAdapter( mDirAdapter );
-			mDirectoryNavigation.setOnItemSelectedListener( new OnDirectoryNavigationItemSelectionListener() );
+			actionBar.setListNavigationCallbacks( mDirAdapter, new OnDirectoryNavigationItemSelectionListener() );
 		} else {
 			// Show home, back, search button bar
 			mButtonBack = ( Button ) findViewById( R.id.button_back );
@@ -838,12 +837,13 @@ public class FileBrowserActivity extends RootActivity {
 	// Inner classes
 	// //////////////////////////////////////////////////////////////////////
 
-	private class OnDirectoryNavigationItemSelectionListener implements AdapterView.OnItemSelectedListener {
+	private class OnDirectoryNavigationItemSelectionListener implements ActionBar.OnNavigationListener {
 
 		@Override
-		public void onItemSelected( AdapterView< ? > arg0, View arg1, int position, long arg3 ) {
+		public boolean onNavigationItemSelected( int itemPosition, long itemId ) {
+			Log.d(TAG, "Select item " + itemPosition );
 			StringBuilder builder = new StringBuilder();
-			for ( int i = 0; i <= position; ++i ) {
+			for ( int i = 0; i <= itemPosition; ++i ) {
 				builder.append( mDirStack.get( i ) );
 			}
 			File file = new File( builder.toString() );
@@ -851,12 +851,7 @@ public class FileBrowserActivity extends RootActivity {
 				mCurrentDir = file;
 				refreshList( false );
 			}
-
-		}
-
-		@Override
-		public void onNothingSelected( AdapterView< ? > arg0 ) {
-
+			return true;
 		}
 
 	}

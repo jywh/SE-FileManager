@@ -73,7 +73,7 @@ public class MultiSelectionActivity extends RootActivity {
 			// Show action bar
 			ActionBar actionBar = getActionBar();
 			actionBar.setDisplayHomeAsUpEnabled( true );
-			actionBar.getCustomView().setVisibility( View.GONE );
+			actionBar.setNavigationMode( ActionBar.NAVIGATION_MODE_STANDARD );
 		}
 
 		mButtonCopy = ( Button ) findViewById( R.id.button_back );
