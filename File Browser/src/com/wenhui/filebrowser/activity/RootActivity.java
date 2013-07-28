@@ -51,7 +51,6 @@ public abstract class RootActivity extends Activity {
 	protected File mCurrentDir;
 	protected ListView mListView;
 	protected GridView mGridView;
-	protected TextView mTextPath;
 
 	protected SimpleFileAdapter mAdapter;
 	protected ArrayList< ListItemsContainer > mListItems;
@@ -156,7 +155,6 @@ public abstract class RootActivity extends Activity {
 			mListView.setVisibility( View.GONE );
 		}
 
-		mTextPath = ( TextView ) findViewById( R.id.textView_path );
 
 	}
 
@@ -182,7 +180,6 @@ public abstract class RootActivity extends Activity {
 				new PopulateDirectoryNavigationListTask().execute( path );
 			}
 			new PopulateAdapterDataTask( layoutChange ).execute();
-			mTextPath.setText( path );
 		}
 	}
 

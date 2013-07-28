@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <TextView
-        android:id="@+id/textView_path"
-        style="@style/path_text_view_style"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/gray"
-        android:ellipsize="marquee"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:singleLine="true"
-        android:textColor="@color/text_path" >
-    </TextView>
-    
     <ImageView
         android:id="@+id/empty_folder"
         android:layout_width="match_parent"
