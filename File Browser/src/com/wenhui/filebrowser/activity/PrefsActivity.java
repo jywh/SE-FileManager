@@ -2,15 +2,16 @@ package com.wenhui.filebrowser.activity;
 
 import java.io.File;
 
-import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
-import android.preference.*;
+import android.preference.CheckBoxPreference;
+import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
+import android.preference.PreferenceActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -31,13 +32,6 @@ public class PrefsActivity extends PreferenceActivity {
 	protected void onCreate( Bundle savedInstanceState ) {
 		super.onCreate( savedInstanceState );
 		setTitle( R.string.setting );
-		
-		if ( DeviceInfo.hasHoneycomb() ) {
-			// Show action bar
-			ActionBar actionBar = getActionBar();
-			actionBar.setDisplayHomeAsUpEnabled( true );
-			actionBar.getCustomView().setVisibility( View.GONE );
-		}
 		
 		addPreferencesFromResource( R.xml.setting );
 		final CheckBoxPreference hidden = ( CheckBoxPreference ) getPreferenceManager().findPreference( App.PREFS_KEY_HIDDEN );

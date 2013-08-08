@@ -7,7 +7,7 @@
 
     <uses-sdk
         android:minSdkVersion="8"
-        android:targetSdkVersion="16" />
+        android:targetSdkVersion="18" />
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -60,6 +60,7 @@
         
         <provider android:name="com.wenhui.filebrowser.generic.FileManagerProvider"
             android:exported="false"
+            android:enabled="false"
             android:authorities="com.wenhui.filebrowser"/>
     </application>
 

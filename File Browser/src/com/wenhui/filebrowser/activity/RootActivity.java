@@ -4,7 +4,9 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import android.app.*;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -13,6 +15,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v7.app.ActionBarActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -21,8 +24,14 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.*;
+import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.GridView;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.wenhui.filebrowser.App;
 import com.wenhui.filebrowser.DeviceInfo;
@@ -40,7 +49,7 @@ import com.wenhui.filebrowser.model.ListItemsContainer;
  *  </b> 
  *  to its <activity> tag.
  */
-public abstract class RootActivity extends Activity {
+public abstract class RootActivity extends ActionBarActivity {
 
 	private static final String TAG = "RootActivity";
 
@@ -74,19 +83,15 @@ public abstract class RootActivity extends Activity {
 	@Override
 	protected void onCreate( Bundle savedInstanceState ) {
 		super.onCreate( savedInstanceState );
-
-		if ( !DeviceInfo.hasHoneycomb() ) {
-			requestWindowFeature( Window.FEATURE_NO_TITLE );
-		}
+		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		
 		mListItems = new ArrayList< ListItemsContainer >();
 		mSelectionCache = new HashMap< String, Selection >();
 		
-		if( DeviceInfo.hasHoneycomb() ){
-			mDirStack = new ArrayList< String >();
-		}
+		mDirStack = new ArrayList< String >();
 	}
-
+	
+	
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -94,9 +99,8 @@ public abstract class RootActivity extends Activity {
 	}
 
 	@Override
-	protected void onPause() {
-		super.onPause();
-		
+	protected void onUserLeaveHint() {
+		super.onUserLeaveHint();
 		if ( App.instance().refreshCache() ) {
 			// Refresh media cache, so gallery can pick up file changes.
 			sendBroadcast( new Intent( Intent.ACTION_MEDIA_MOUNTED, Uri.parse( "file://" + Environment.getExternalStorageDirectory() ) ) );
@@ -133,11 +137,13 @@ public abstract class RootActivity extends Activity {
 	// UI
 	// ////////////////////////////////////
 
+	protected abstract int getResId();
+	
 	protected void initView() {
 
 		mCurrentDir = App.instance().getCurrentPath();
 
-		setContentView( R.layout.file_browser );
+		setContentView( getResId() );
 
 		mListView = ( ListView ) findViewById( R.id.myList );
 		mGridView = ( GridView ) findViewById( R.id.myGrid );
@@ -176,7 +182,7 @@ public abstract class RootActivity extends Activity {
 		App.instance().setCurrentPath( mCurrentDir );
 		if ( mCurrentDir.isDirectory() ) {
 			String path = mCurrentDir.getPath();
-			if ( DeviceInfo.hasHoneycomb() && !App.instance().isMultiSelectMode() ) {
+			if (!App.instance().isMultiSelectMode() ) {
 				new PopulateDirectoryNavigationListTask().execute( path );
 			}
 			new PopulateAdapterDataTask( layoutChange ).execute();
@@ -306,7 +312,7 @@ public abstract class RootActivity extends Activity {
 			if ( !App.instance().isMultiSelectMode() ) {
 				mDirAdapter.notifyDataSetChanged();
 			}
-			getActionBar().setSelectedNavigationItem( mDirAdapter.getCount() - 1 );
+			getSupportActionBar().setSelectedNavigationItem( mDirAdapter.getCount() - 1 );
 		}
 
 	}
@@ -315,8 +321,6 @@ public abstract class RootActivity extends Activity {
 
 		private boolean layoutChange;
 
-		private Dialog dialog;
-
 		public PopulateAdapterDataTask( boolean layoutChange ) {
 			this.layoutChange = layoutChange;
 		}
@@ -324,7 +328,7 @@ public abstract class RootActivity extends Activity {
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
-			dialog = showProgress();
+			showProgress();
 		}
 
 		@Override
@@ -345,27 +349,17 @@ public abstract class RootActivity extends Activity {
 			mListItems.clear();
 			mListItems = result;
 			updateContentView( layoutChange );
-			dismissProgress( dialog );
+			dismissProgress( );
 		}
 
 	}
 
-	protected Dialog showProgress() {
-		ProgressDialog dialog = new ProgressDialog( RootActivity.this ) {
-			@Override
-			public boolean onSearchRequested() {
-				return false;
-			}
-		};
-		dialog.setMessage( getString( R.string.processing ) );
-		dialog.setCancelable( false );
-		dialog.show();
-		return dialog;
-
+	protected void showProgress() {
+		setProgressBarIndeterminateVisibility(true);
 	}
 
-	protected void dismissProgress( Dialog dialog ) {
-		dialog.dismiss();
+	protected void dismissProgress( ) {
+		setProgressBarIndeterminateVisibility(false);
 	}
 
 	protected void showAddFolderDialog() {
